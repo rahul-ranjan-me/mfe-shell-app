@@ -1,33 +1,39 @@
 import React, { useEffect, useState } from "react";
-import { getRoutes } from "shared/dynamicFederationUtils";
+import {
+  setupInitialApp,
+} from "shared/dynamicFederationUtils";
+import localRoutes from "../const/routes";
 import App from "./App";
 
 function SetupApp() {
-  const [commonRoutes, setCommonRoutes] = useState([]);
-  const [manifests, setManifests] = useState([]);
+  const [allAppRoutes, setAllAppRoutes] = useState(localRoutes);
+  const [federatedComponents, setFederatedComponents] = useState({});
 
   useEffect(() => {
     const configSetup = async () => {
-      const response = await fetch("/config.json");
-      const data = await response.json();
-      const { manifests: manifestModule, allModuleRoutes } = await getRoutes(
-        data,
-        [],
-        "navGroups"
+      const configsResponse = await fetch("/config.json");
+      const configs = await configsResponse.json();
+
+      const { appRoutesInitial, updateWithModuleName } = await setupInitialApp(
+        configs,
+        localRoutes
       );
-      setCommonRoutes(allModuleRoutes);
-      setManifests(manifestModule);
+      setAllAppRoutes(appRoutesInitial);
+      setFederatedComponents(updateWithModuleName);
     };
 
     configSetup();
   }, []);
 
   return (
-    <div>
-      {commonRoutes.length > 0 && (
-        <App commonRoutes={commonRoutes} manifests={manifests} />
+    <>
+      {Object.keys(federatedComponents).length > 0 && (
+        <App
+          appRoutes={allAppRoutes}
+          federatedComponents={federatedComponents}
+        />
       )}
-    </div>
+    </>
   );
 }
 

@@ -1,19 +1,20 @@
 import React, { Suspense } from "react";
-import {
-  BrowserRouter as Router,
-} from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import propTypes from "prop-types";
 import { GlobalState, Header, Footer } from "shared/Components";
-import AppRoutes from './AppRoutes'
+import AppRoutes from "./AppRoutes";
 
 import "./index.scss";
 
-function App({ commonRoutes = [], manifests = [] }) {
+function App({ appRoutes = [], federatedComponents = {} }) {
   return (
     <Router>
-      <GlobalState manifestData={manifests}>
+      <GlobalState
+        appRoutesData={appRoutes}
+        federatedComponentsData={federatedComponents}
+      >
         <div className="app">
-          <Header routes={commonRoutes} />
+          <Header />
           <AppRoutes />
           <Footer />
         </div>
@@ -22,9 +23,6 @@ function App({ commonRoutes = [], manifests = [] }) {
   );
 }
 
-App.propTypes = {
-  commonRoutes: propTypes.array.isRequired,
-  manifests: propTypes.array.isRequired,
-};
+App.propTypes = {};
 
 export default App;
