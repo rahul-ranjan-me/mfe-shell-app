@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
-import {
-  setupInitialApp,
-} from "shared/dynamicFederationUtils";
+import { setupInitialApp } from "shared/dynamicFederationUtils";
 import localRoutes from "../const/routes";
 import App from "./App";
 
 function SetupApp() {
-  const [allAppRoutes, setAllAppRoutes] = useState(localRoutes);
+  const [allAppRoutes, setAllAppRoutes] = useState([]);
   const [federatedComponents, setFederatedComponents] = useState({});
 
   useEffect(() => {
@@ -27,7 +25,7 @@ function SetupApp() {
 
   return (
     <>
-      {Object.keys(federatedComponents).length > 0 && (
+      {allAppRoutes.length > 0 && (
         <App
           appRoutes={allAppRoutes}
           federatedComponents={federatedComponents}
