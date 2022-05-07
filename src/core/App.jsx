@@ -11,11 +11,9 @@ function App({ appRoutes = [], federatedComponents = {} }) {
       appRoutesData={appRoutes}
       federatedComponentsData={federatedComponents}
     >
-      <div className="app">
-        <Header />
-        <AppRoutes appRoutes={appRoutes} />
-        <Footer />
-      </div>
+      <Header />
+      <AppRoutes appRoutes={appRoutes} />
+      <Footer />
     </GlobalState>
   );
 }
