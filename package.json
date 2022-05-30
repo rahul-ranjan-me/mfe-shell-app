@@ -1,6 +1,6 @@
 {
-  "name": "mfe-shell-app",
-  "version": "1.0.0",
+  "name": "<%= project_name %>",
+  "version": "<% print(version ? version : "0.0.0") %>",
   "description": "MFA Shell built using Create MFA App CLI",
   "main": "index.js",
   "scripts": {
