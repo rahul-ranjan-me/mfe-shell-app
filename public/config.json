@@ -1,6 +1,6 @@
 [
   {
-    "name": "mfe_app",
+    "name": "module_expose_app",
     "url": "http://localhost:6003/"
   }
 ]
