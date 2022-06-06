@@ -5,7 +5,7 @@ import { MFAComponentLoader } from "shared/Components";
 const Home = () => {
   return (
     <>
-      <Link to="/payments">Go to about page</Link>
+      <Link to="/payments">Go to different micro-frontend page</Link>
       <h1>Welcome to Module federation bootstrap app</h1>
       <MFAComponentLoader componentName="./header" />
     </>
