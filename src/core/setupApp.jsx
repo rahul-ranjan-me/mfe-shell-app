@@ -24,14 +24,12 @@ function SetupApp() {
   }, []);
 
   return (
-    <>
-      {allAppRoutes.length > 0 && (
-        <App
-          appRoutes={allAppRoutes}
-          federatedComponents={federatedComponents}
-        />
-      )}
-    </>
+    allAppRoutes.length > 0 && (
+      <App
+        appRoutes={allAppRoutes}
+        federatedComponents={federatedComponents}
+      />
+    )
   );
 }
 

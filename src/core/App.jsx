@@ -18,6 +18,13 @@ function App({ appRoutes = [], federatedComponents = {} }) {
   );
 }
 
-App.propTypes = {};
+App.defaultProps = {
+  federatedComponents: {}
+};
+
+App.propTypes = {
+  appRoutes: propTypes.array.isRequired,
+  federatedComponents: propTypes.object
+};
 
 export default App;
