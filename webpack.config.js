@@ -4,7 +4,6 @@ const ModuleFederationPlugin =
   require("webpack").container.ModuleFederationPlugin;
 const ExternalTemplateRemotesPlugin = require("external-remotes-plugin")
 const path = require("path");
-const deps = require("./package.json").dependencies;
 const mode = process.env.mode ? process.env.mode : "development";
 const port = process.env.port || 6001;
 
