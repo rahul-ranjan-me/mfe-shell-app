@@ -6,20 +6,113 @@ body {
   height: 100%;
   background-color: $secondarySpotlight-bg;
   color: $black;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: charter, Georgia, Cambria, "Times New Roman", Times, serif;
   padding: 0;
   margin: 0;
+  color: $black;
+  line-height: 17px;
+  font-size: 20px;
+  letter-spacing: -0.003em;
+  line-height: 32px;
+  font-weight: 400;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 #app {
   .app-container {
     margin: 2em auto;
-    max-width: 1240px;
+    max-width: 1000px;
     width: 100%;
     flex-grow: 1;
     box-shadow: $white-container-shadow;
     background-color: $white-bg;
     padding: 20px;
     border-radius: 5px;
+
+    h1 {
+      font-size: 32px;
+      margin-top: 0;
+      font-weight: 700;
+      line-height: 40px;
+      letter-spacing: -0.016em;
+    }
+
+    h2 {
+      font-size: 20px;
+      line-height: 24px;
+      letter-spacing: 0;
+      margin-top: 0;
+      font-weight: 600;
+      margin-top: 48px;
+      margin-bottom: -10px;
+    }
+
+    h3 {
+      font-size: 18px;
+      line-height: 24px;
+      letter-spacing: 0;
+      margin-top: 0;
+      font-weight: 600;
+      margin-top: 48px;
+      margin-bottom: -10px;
+    }
+
+    h4 {
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0;
+      margin-top: 0;
+      font-weight: 600;
+      margin-top: 48px;
+      margin-bottom: -10px;
+    }
+
+    p {
+      font-size: 20px;
+      letter-spacing: -0.003em;
+      line-height: 32px;
+      font-weight: 400;
+      margin-top: 18px;
+      margin-bottom: -10px;
+      overflow: break-word;
+    }
+
+    a {
+      text-decoration: none;
+      color: $primary-call-action;
+
+      &:hover {
+        color: $black;
+        text-decoration: underline;
+      }
+    }
+
+    pre {
+      display: block;
+      width: 100%;
+      overflow-x: auto;
+      background: $black;
+      color: $banner-1;
+
+      code {
+        background: $black;
+        padding: 0;
+      }
+    }
+
+    code {
+      background: $progress-indicator-bg;
+      color: $white;
+      padding: 2px;
+    }
+
+    .go-to-top {
+      position: fixed;
+      right: 10px;
+      bottom: 20px;
+    }
   }
 }

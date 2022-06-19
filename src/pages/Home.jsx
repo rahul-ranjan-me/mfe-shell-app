@@ -1,15 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { MFAComponentLoader } from "shared/Components";
+import {
+  SharedContextExample,
+  MFAComponentLoader,
+  Readme,
+} from "shared/Components";
+import readmeContent from "./readmeData";
 
-const Home = () => {
-  return (
-    <>
-      <Link to="/payments">Go to different micro-frontend page</Link>
-      <h1>Welcome to Module federation bootstrap app</h1>
-      <MFAComponentLoader componentName="./header" />
-    </>
-  );
-};
+const Home = () => (
+  <div className="home-container">
+    <Readme data={readmeContent} />
+    <div id="mfa-component-loader-example" />
+    <MFAComponentLoader componentName="./header" />
+    <SharedContextExample link="/payments" />
+  </div>
+);
 
 export default Home;
